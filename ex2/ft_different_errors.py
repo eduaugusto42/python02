@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 
+def main():
+    print("=== Garden Error Types Demo ===")
+    print("Testing operation 0...")
+    test_error_types(0)
+    print("Testing operation 1...")
+    test_error_types(1)
+    print("Testing operation 2...")
+    test_error_types(2)
+    print("Testing operation 3...")
+    test_error_types(3)
+    print("Testing operation 4...")
+    test_error_types(4)
+    print()
+    print("All error types tested successfully!")
+
 def test_error_types(operation_number: int) -> None:
     try:
         garden_operations(operation_number)
@@ -24,21 +39,6 @@ def garden_operations(operation_number: int) -> None:
         "abc" + 42
     else:
         print("Operation completed succesfully")
-
-def main():
-    print("=== Garden Error Types Demo ===")
-    print("Testing operation 0...")
-    test_error_types(0)
-    print("Testing operation 1...")
-    test_error_types(1)
-    print("Testing operation 2...")
-    test_error_types(2)
-    print("Testing operation 3...")
-    test_error_types(3)
-    print("Testing operation 4...")
-    test_error_types(4)
-    print()
-    print("All error types tested successfully!")
 
 if __name__ == "__main__":
     main()

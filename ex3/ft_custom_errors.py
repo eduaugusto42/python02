@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
 
+def main():
+    print("=== Custom Garden Errors Demo ===")
+    print()
+    print("Testing PlantError...")
+    test_plant_error("The tomato plant is wilting!")
+    print()
+    print("Testing WaterError...")
+    test_water_error("Not enough water in the tank!")
+    print()
+    print("Testing catching all garden errors...")
+    test_garden_error(0, "The tomato plant is wilting!")
+    test_garden_error(1, "Not enough water in the tank!")
+    print()
+    print("All custom error types work correctly!")
+
 class GardenError(Exception):
     pass
 
@@ -34,21 +49,6 @@ def test_garden_error(op: int, s: str) -> None:
             raise WaterError(s)
         except GardenError as e:
             print(f"Caught GardenError: {e}")
-
-def main():
-    print("=== Custom Garden Errors Demo ===")
-    print()
-    print("Testing PlantError...")
-    test_plant_error("The tomato plant is wilting!")
-    print()
-    print("Testing WaterError...")
-    test_water_error("Not enough water in the tank!")
-    print()
-    print("Testing catching all garden errors...")
-    test_garden_error(0, "The tomato plant is wilting!")
-    test_garden_error(1, "Not enough water in the tank!")
-    print()
-    print("All custom error types work correctly!")
 
 if __name__ == "__main__":
     main()
