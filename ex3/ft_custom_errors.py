@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def main():
+def main() -> None:
     print("=== Custom Garden Errors Demo ===")
     print()
     print("Testing PlantError...")
@@ -15,16 +15,20 @@ def main():
     print()
     print("All custom error types work correctly!")
 
+
 class GardenError(Exception):
     pass
 
+
 class PlantError(GardenError):
-    def __init__(self, message="Unknown plant error"):
+    def __init__(self, message: str = "Unknown plant error"):
         super().__init__(message)
 
+
 class WaterError(GardenError):
-    def __init__(self, message="Unknown water error"):
+    def __init__(self, message: str = "Unknown water error"):
         super().__init__(message)
+
 
 def test_plant_error(s: str) -> None:
     try:
@@ -32,11 +36,13 @@ def test_plant_error(s: str) -> None:
     except PlantError as e:
         print(f"Caught PlantError: {e}")
 
+
 def test_water_error(s: str) -> None:
     try:
         raise WaterError(s)
     except WaterError as e:
         print(f"Caught WaterError: {e}")
+
 
 def test_garden_error(op: int, s: str) -> None:
     if op == 0:
@@ -50,6 +56,6 @@ def test_garden_error(op: int, s: str) -> None:
         except GardenError as e:
             print(f"Caught GardenError: {e}")
 
+
 if __name__ == "__main__":
     main()
-

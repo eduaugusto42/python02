@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def main():
+def main() -> None:
     print("=== Garden Error Types Demo ===")
     print("Testing operation 0...")
     test_error_types(0)
@@ -15,6 +15,7 @@ def main():
     print()
     print("All error types tested successfully!")
 
+
 def test_error_types(operation_number: int) -> None:
     try:
         garden_operations(operation_number)
@@ -28,6 +29,7 @@ def test_error_types(operation_number: int) -> None:
         elif isinstance(e, TypeError):
             print(f"Caught TypeError: {e}")
 
+
 def garden_operations(operation_number: int) -> None:
     if operation_number == 0:
         int("abc")
@@ -39,6 +41,7 @@ def garden_operations(operation_number: int) -> None:
         "abc" + 42
     else:
         print("Operation completed succesfully")
+
 
 if __name__ == "__main__":
     main()
